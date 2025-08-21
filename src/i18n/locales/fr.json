@@ -1,0 +1,289 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "gallery": "Galerie",
+    "projects": "Projets",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "Software Engineer | Consultant IT |Designer",
+    "name": "TCHAMBA TCHAKOUNTE Edwin",
+    "description": "Formateur professionnel chez BroadRange Consulting, je transforme vos idées en solutions digitales innovantes et performantes.",
+    "collaborate": "Collaborons",
+    "whatsapp": "WhatsApp",
+    "bestProject": "🏆 Meilleur Projet 2024",
+    "pythonCertified": "🐍 Python Certifié",
+    "professionalTrainer": "👨‍🏫 Formateur Pro"
+  },
+  "stats": {
+    "title": "Quelques chiffres",
+    "subtitle": "Mon parcours en quelques statistiques",
+    "experience": "Années d'expérience",
+    "projects": "Projets réalisés",
+    "clients": "Clients satisfaits",
+    "technologies": "Technologies maîtrisées"
+  },
+  "services": {
+    "title": "Mes services",
+    "subtitle": "Solutions digitales complètes pour transformer vos idées en réalité",
+    "seeAll": "Voir tous les services",
+    "itConsultation": {
+      "title": "Consultation IT",
+      "description": "Conseil stratégique pour optimiser votre infrastructure digitale et améliorer vos processus métier.",
+      "details": "Audit technique complet, définition de stratégie digitale, optimisation des processus existants et accompagnement dans la transformation digitale."
+    },
+    "systemDesign": {
+      "title": "Conception de Systèmes",
+      "description": "Architecture de bases de données et systèmes d'information sur mesure pour votre entreprise.",
+      "details": "Modélisation des données, architecture système, optimisation des performances et sécurisation des données."
+    },
+    "graphicIdentity": {
+      "title": "Identité Graphique",
+      "description": "Création d'identités visuelles marquantes et cohérentes pour votre marque.",
+      "details": "Logo design, charte graphique complète, brand identity et guidelines de marque professionnelles."
+    },
+    "visualDesign": {
+      "title": "Design Visuel",
+      "description": "Flyers, brochures et supports marketing professionnels pour votre communication.",
+      "details": "Création de supports print et digital, mise en page professionnelle, illustrations et visuels impactants."
+    },
+    "webDevelopment": {
+      "title": "Développement Web",
+      "description": "Sites web modernes, responsifs et performants adaptés à vos besoins spécifiques.",
+      "details": "Sites vitrine, e-commerce, applications web, optimisation SEO et hébergement sécurisé."
+    },
+    "webApplications": {
+      "title": "Applications Web",
+      "description": "Solutions web évolutives avec les technologies de pointe pour votre business.",
+      "details": "Développement full-stack, APIs REST, bases de données, authentification et déploiement cloud."
+    },
+    "mobileApps": {
+      "title": "Applications Mobile",
+      "description": "Applications natives et cross-platform pour iOS et Android avec UX optimisée.",
+      "details": "React Native, Flutter, intégration APIs, notifications push et publication sur les stores."
+    }
+  },
+  "gallery": {
+    "title": "Créations visuelles",
+    "subtitle": "Aperçu de mes réalisations créatives et techniques",
+    "seeAll": "Voir toute la galerie",
+    "categories": {
+      "uiux": "UI/UX Design",
+      "mobile": "Mobile Design",
+      "branding": "Branding",
+      "web": "Web Design"
+    }
+  },
+  "testimonials": {
+    "title": "Ce que disent mes clients",
+    "subtitle": "Témoignages de satisfaction et de confiance",
+    "seeAll": "Voir tous les témoignages"
+  },
+  "blog": {
+    "title": "Derniers articles",
+    "subtitle": "Insights techniques et tendances du développement",
+    "seeAll": "Voir tous les articles",
+    "readTime": "min",
+    "categories": {
+      "architecture": "Architecture",
+      "backend": "Backend",
+      "aiml": "IA/ML",
+      "frontend": "Frontend",
+      "devops": "DevOps",
+      "mobile": "Mobile",
+      "dataScience": "Data Science",
+      "security": "Sécurité",
+      "design": "Design"
+    }
+  },
+  "partners": {
+    "title": "Nos Entreprises",
+    "subtitle": "Collaboratives & Partenaires",
+    "description": "Découvrez les entreprises qui nous font confiance et avec lesquelles nous collaborons pour créer des solutions digitales innovantes.",
+    "collaboration": {
+      "title": "Collaboration",
+      "description": "Partenariats stratégiques pour des projets d'envergure et des solutions innovantes."
+    },
+    "formation": {
+      "title": "Formation",
+      "description": "Programmes de formation et transfert de compétences avec les institutions partenaires."
+    },
+    "consulting": {
+      "title": "Conseil",
+      "description": "Expertise technique et conseil stratégique pour optimiser les processus digitaux."
+    },
+    "cta": {
+      "title": "Intéressé par un partenariat ?",
+      "description": "Rejoignez notre réseau de partenaires et créons ensemble des solutions digitales innovantes.",
+      "button": "Devenir Partenaire"
+    }
+  },
+  "cta": {
+    "title": "Prêt à démarrer votre projet digital ?",
+    "subtitle": "Discutons de vos besoins et créons ensemble une solution sur mesure qui dépasse vos attentes et propulse votre business.",
+    "startNow": "Démarrons maintenant",
+    "viewProjects": "Voir mes projets"
+  },
+  "footer": {
+    "brand": "Consultant IT & Expert en Solutions Digitales",
+    "contact": "Contact",
+    "followMe": "Suivez-moi",
+    "backToTop": "Retour en haut ↑",
+    "copyright": "Tous droits réservés."
+  },
+  "about": {
+    "title": "Architecte digital passionné",
+    "subtitle": "À propos de moi",
+    "description1": "Avec 2 années d'expérience dans le conseil IT et les solutions digitales, je me spécialise dans la transformation d'exigences métier complexes en solutions élégantes et évolutives.",
+    "description2": "En tant que formateur professionnel chez BroadRange Consulting, je partage ma passion pour les technologies avec la nouvelle génération de développeurs. Mon expertise couvre le développement web, les applications mobiles et la stratégie digitale globale.",
+    "description3": "Élu meilleur projet de fin d'étude 2024 à l'IUTR FV de Bandjoun et certifié développeur Python, je continue d'innover et de repousser les limites technologiques.",
+    "achievements": "Réalisations & certifications",
+    "achievementsSubtitle": "Mon parcours professionnel et académique",
+    "skills": "Compétences & expertises"
+  },
+  "contact": {
+    "title": "Démarrons votre projet ensemble",
+    "subtitle": "Contactez-moi",
+    "description": "Prêt à transformer vos idées en réalité digitale ? Discutons de votre projet et explorons ensemble les possibilités infinies.",
+    "ways": "Plusieurs façons de me joindre",
+    "projectTitle": "Parlez-moi de votre projet",
+    "projectSubtitle": "Plus vous me donnez de détails, mieux je peux vous conseiller",
+    "form": {
+      "fullName": "Nom complet",
+      "email": "Email professionnel",
+      "company": "Entreprise / Organisation",
+      "serviceType": "Type de service",
+      "budget": "Budget estimé",
+      "timeline": "Délai souhaité",
+      "description": "Description du projet",
+      "descriptionPlaceholder": "Décrivez votre projet, vos objectifs, vos contraintes techniques, votre audience cible...",
+      "send": "Envoyer ma demande",
+      "success": "Message envoyé avec succès !",
+      "successMessage": "Je vous recontacterai dans les plus brefs délais pour discuter de votre projet."
+    },
+    "faq": "Questions fréquentes"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "save": "Sauvegarder",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "share": "Partager",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "readMore": "Lire plus",
+    "showMore": "Voir plus",
+    "showLess": "Voir moins",
+    "all": "Tous"
+  },
+  "blogPosts": {
+    "1": {
+      "title": "Architecture Microservices avec Python et Docker",
+      "excerpt": "Guide complet pour construire une architecture microservices scalable avec Python, FastAPI et Docker. De la conception au déploiement.",
+      "content": "<h2>Introduction</h2><p>Dans le monde du développement moderne, l'architecture microservices est devenue incontournable pour créer des applications scalables et maintenables. Ce guide vous accompagne dans la création d'une architecture complète avec Python et Docker.</p><h2>1. Conception de l'Architecture</h2><p>Une architecture microservices bien conçue commence par la décomposition fonctionnelle. Chaque service doit avoir une responsabilité unique et bien définie. Nous utiliserons FastAPI pour créer des services légers et performants.</p><h2>2. Containerisation avec Docker</h2><p>Docker permet d'encapsuler chaque microservice dans un conteneur isolé. Cela garantit la cohérence entre les environnements de développement, test et production. Nous créerons des Dockerfiles optimisés pour Python.</p><h2>3. Communication Inter-Services</h2><p>Les microservices communiquent via des APIs REST ou des messages asynchrones. Nous implémenterons des patterns comme Circuit Breaker et Retry pour assurer la résilience du système.</p><h2>4. Monitoring et Observabilité</h2><p>Un système distribué nécessite une observabilité complète. Nous intégrerons des outils de logging, métriques et tracing pour surveiller la santé de nos services.</p><h2>Conclusion</h2><p>L'architecture microservices avec Python et Docker offre une base solide pour des applications modernes. Cette approche favorise la scalabilité, la maintenabilité et l'agilité de développement.</p>",
+      "date": "21 Août 2025 - 09:15",
+      "readTime": "12 min",
+      "category": "Architecture",
+      "author": "Edwin Tchamba",
+      "tags": ["Python", "FastAPI", "Docker", "Microservices", "Architecture"]
+    },
+    "2": {
+      "title": "Développement d'API REST avec FastAPI et PostgreSQL",
+      "excerpt": "Créer des APIs performantes et sécurisées avec FastAPI, authentification JWT, validation Pydantic et intégration PostgreSQL.",
+      "content": "<h2>Introduction à FastAPI</h2><p>FastAPI révolutionne le développement d'APIs en Python avec sa syntaxe moderne, sa validation automatique et sa documentation interactive. Ce framework combine performance et simplicité d'utilisation.</p><h2>1. Configuration de l'Environnement</h2><p>Nous commençons par configurer un environnement virtuel Python et installer FastAPI, Uvicorn, SQLAlchemy et Pydantic. Cette stack offre tout le nécessaire pour créer des APIs robustes.</p><h2>2. Modélisation des Données</h2><p>SQLAlchemy nous permet de définir nos modèles de données avec une approche ORM. Nous créerons des relations complexes et optimiserons les requêtes pour PostgreSQL.</p><h2>3. Authentification JWT</h2><p>L'authentification JWT sécurise nos endpoints. Nous implémenterons un système complet avec refresh tokens, gestion des rôles et middleware de sécurité.</p><h2>4. Validation et Sérialisation</h2><p>Pydantic assure la validation automatique des données d'entrée et de sortie. Cette approche garantit la cohérence et la sécurité de notre API.</p><h2>Tests et Documentation</h2><p>FastAPI génère automatiquement une documentation interactive. Nous ajouterons des tests unitaires et d'intégration pour assurer la qualité du code.</p>",
+      "date": "21 Août 2025 - 14:30",
+      "readTime": "15 min",
+      "category": "Backend",
+      "author": "Edwin Tchamba",
+      "tags": ["FastAPI", "PostgreSQL", "JWT", "Pydantic", "API"]
+    },
+    "3": {
+      "title": "Machine Learning avec Python : Classification d'Images",
+      "excerpt": "Implémentation complète d'un modèle de classification d'images avec TensorFlow, Keras et techniques d'augmentation de données.",
+      "content": "<h2>Introduction au Deep Learning</h2><p>L'intelligence artificielle transforme notre façon de traiter les données visuelles. Ce guide pratique vous accompagne dans la création d'un modèle de classification d'images avec TensorFlow et Keras.</p><h2>1. Préparation des Données</h2><p>La qualité des données détermine la performance du modèle. Nous explorerons les techniques de préprocessing, normalisation et augmentation de données pour optimiser l'entraînement.</p><h2>2. Architecture CNN</h2><p>Les réseaux de neurones convolutionnels (CNN) excellent dans la reconnaissance d'images. Nous construirons une architecture optimisée avec des couches de convolution, pooling et dropout.</p><h2>3. Entraînement et Optimisation</h2><p>L'entraînement nécessite une stratégie d'optimisation. Nous utiliserons des techniques comme l'early stopping, la réduction du learning rate et la validation croisée.</p><h2>4. Évaluation et Déploiement</h2><p>L'évaluation du modèle utilise des métriques comme l'accuracy, la précision et le recall. Nous déploierons le modèle avec FastAPI pour créer une API de prédiction.</p><h2>Conclusion</h2><p>La classification d'images avec Python ouvre de nombreuses possibilités. Cette approche peut être adaptée à divers domaines : médical, automobile, sécurité, etc.</p>",
+      "date": "21 Août 2025 - 16:45",
+      "readTime": "18 min",
+      "category": "IA/ML",
+      "author": "Edwin Tchamba",
+      "tags": ["TensorFlow", "Keras", "CNN", "Computer Vision", "Deep Learning"]
+    },
+    "4": {
+      "title": "Optimisation des Performances React avec Hooks Avancés",
+      "excerpt": "Techniques d'optimisation React : useMemo, useCallback, React.memo, lazy loading et code splitting pour des applications ultra-rapides.",
+      "content": "<h2>Introduction</h2><p>Les performances sont cruciales dans les applications React modernes. Ce guide explore les techniques avancées d'optimisation pour créer des interfaces utilisateur fluides et réactives.</p><h2>1. Hooks d'Optimisation</h2><p>useMemo et useCallback sont essentiels pour éviter les recalculs inutiles. Nous verrons comment les utiliser efficacement sans tomber dans la sur-optimisation.</p><h2>2. Mémorisation des Composants</h2><p>React.memo permet de mémoriser les composants et éviter les re-rendus inutiles. Nous explorerons les bonnes pratiques et les pièges à éviter.</p><h2>3. Code Splitting</h2><p>Le fractionnement de code avec React.lazy et Suspense améliore les temps de chargement. Nous implémenterons une stratégie de chargement progressif.</p><h2>4. Optimisation des Listes</h2><p>Les grandes listes peuvent impacter les performances. Nous utiliserons la virtualisation et d'autres techniques pour maintenir la fluidité.</p><h2>Conclusion</h2><p>L'optimisation React nécessite une approche méthodique. Ces techniques permettent de créer des applications performantes et une expérience utilisateur exceptionnelle.</p>",
+      "date": "21 Août 2025 - 10:30",
+      "readTime": "10 min",
+      "category": "Frontend",
+      "author": "Edwin Tchamba",
+      "tags": ["React", "Performance", "Hooks", "Optimization", "JavaScript"]
+    },
+    "5": {
+      "title": "Déploiement d'Applications avec Docker et AWS",
+      "excerpt": "Guide pratique pour déployer des applications Python/React sur AWS avec Docker, ECS, et mise en place de CI/CD avec GitHub Actions.",
+      "content": "<h2>Introduction</h2><p>Le déploiement moderne nécessite une approche containerisée et automatisée. Ce guide vous accompagne dans le déploiement d'applications sur AWS avec Docker et CI/CD.</p><h2>1. Containerisation</h2><p>Docker permet d'encapsuler l'application et ses dépendances. Nous créerons des images optimisées pour la production avec des Dockerfiles multi-stage.</p><h2>2. AWS ECS</h2><p>Elastic Container Service simplifie l'orchestration des conteneurs. Nous configurerons des clusters, services et tâches pour un déploiement scalable.</p><h2>3. CI/CD avec GitHub Actions</h2><p>L'automatisation du déploiement avec GitHub Actions assure la qualité et la rapidité. Nous implémenterons des pipelines complets avec tests et déploiement.</p><h2>4. Monitoring et Logs</h2><p>CloudWatch et autres outils AWS permettent de surveiller l'application en production. Nous configurerons des alertes et tableaux de bord.</p><h2>Conclusion</h2><p>Le déploiement sur AWS avec Docker offre scalabilité et fiabilité. Cette approche moderne facilite la maintenance et l'évolution des applications.</p>",
+      "date": "21 Août 2025 - 13:45",
+      "readTime": "14 min",
+      "category": "DevOps",
+      "author": "Edwin Tchamba",
+      "tags": ["Docker", "AWS", "ECS", "CI/CD", "GitHub Actions"]
+    },
+    "6": {
+      "title": "Développement Mobile avec React Native et Expo",
+      "excerpt": "Création d'applications mobiles cross-platform avec React Native, Expo, navigation, état global et intégration d'APIs natives.",
+      "content": "<h2>Introduction</h2><p>React Native permet de créer des applications mobiles performantes pour iOS et Android avec une base de code unique. Expo simplifie le développement et le déploiement.</p><h2>1. Configuration Expo</h2><p>Expo CLI facilite la création et la gestion de projets React Native. Nous configurerons l'environnement de développement et les outils nécessaires.</p><h2>2. Navigation</h2><p>React Navigation offre une navigation fluide entre les écrans. Nous implémenterons différents types de navigation : stack, tab, drawer.</p><h2>3. Gestion d'État</h2><p>Redux ou Context API permettent de gérer l'état global de l'application. Nous choisirons la solution adaptée selon la complexité.</p><h2>4. APIs Natives</h2><p>L'accès aux fonctionnalités natives (caméra, géolocalisation, notifications) enrichit l'expérience utilisateur. Nous intégrerons ces APIs avec Expo.</p><h2>Conclusion</h2><p>React Native et Expo offrent un écosystème complet pour le développement mobile. Cette approche permet de créer des applications natives performantes rapidement.</p>",
+      "date": "21 Août 2025 - 15:20",
+      "readTime": "11 min",
+      "category": "Mobile",
+      "author": "Edwin Tchamba",
+      "tags": ["React Native", "Expo", "Mobile", "Cross-platform", "JavaScript"]
+    },
+    "7": {
+      "title": "Analyse de Données avec Pandas et Matplotlib",
+      "excerpt": "Techniques d'analyse et visualisation de données avec Python : nettoyage, transformation, analyse statistique et graphiques interactifs.",
+      "content": "<h2>Introduction</h2><p>L'analyse de données est au cœur de la prise de décision moderne. Python avec Pandas et Matplotlib offre un écosystème complet pour explorer et visualiser les données.</p><h2>1. Nettoyage des Données</h2><p>Pandas excelle dans la manipulation de données. Nous verrons comment nettoyer, transformer et préparer les données pour l'analyse.</p><h2>2. Analyse Exploratoire</h2><p>L'exploration des données révèle des insights cachés. Nous utiliserons des techniques statistiques pour comprendre les patterns et tendances.</p><h2>3. Visualisation</h2><p>Matplotlib et Seaborn permettent de créer des graphiques informatifs. Nous explorerons différents types de visualisations selon le contexte.</p><h2>4. Automatisation</h2><p>L'automatisation des analyses avec des scripts Python améliore l'efficacité. Nous créerons des pipelines de traitement réutilisables.</p><h2>Conclusion</h2><p>L'analyse de données avec Python transforme les données brutes en insights actionables. Ces compétences sont essentielles dans le monde data-driven actuel.</p>",
+      "date": "21 Août 2025 - 08:50",
+      "readTime": "13 min",
+      "category": "Data Science",
+      "author": "Edwin Tchamba",
+      "tags": ["Pandas", "Matplotlib", "Data Analysis", "Python", "Visualization"]
+    },
+    "8": {
+      "title": "Sécurité des APIs : JWT, OAuth2 et Bonnes Pratiques",
+      "excerpt": "Sécuriser vos APIs avec JWT, OAuth2, rate limiting, validation des données et protection contre les attaques courantes.",
+      "content": "<h2>Introduction</h2><p>La sécurité des APIs est cruciale dans l'écosystème moderne. Ce guide couvre les meilleures pratiques pour protéger vos APIs contre les menaces courantes.</p><h2>1. Authentification JWT</h2><p>JSON Web Tokens offrent une authentification stateless et scalable. Nous implémenterons un système JWT sécurisé avec refresh tokens.</p><h2>2. OAuth2</h2><p>OAuth2 permet l'autorisation déléguée sécurisée. Nous configurerons différents flows selon les besoins : authorization code, client credentials.</p><h2>3. Rate Limiting</h2><p>La limitation du taux de requêtes protège contre les abus. Nous implémenterons des stratégies de rate limiting adaptatives.</p><h2>4. Validation et Sanitisation</h2><p>La validation stricte des données d'entrée prévient les injections. Nous utiliserons des schémas de validation robustes.</p><h2>Conclusion</h2><p>La sécurité des APIs nécessite une approche multicouche. Ces pratiques garantissent la protection des données et la confiance des utilisateurs.</p>",
+      "date": "21 Août 2025 - 12:10",
+      "readTime": "16 min",
+      "category": "Sécurité",
+      "author": "Edwin Tchamba",
+      "tags": ["JWT", "OAuth2", "API Security", "Authentication", "Security"]
+    },
+    "9": {
+      "title": "Design Graphique et Identité Visuelle Professionnelle",
+      "excerpt": "Guide complet pour créer des identités visuelles marquantes : conception de logos, charte graphique, supports marketing et cohérence de marque.",
+      "content": "<h2>Introduction</h2><p>Le design graphique est l'art de communiquer visuellement des idées et des émotions. Ce guide explore la création d'identités visuelles professionnelles et impactantes.</p><h2>1. Conception de Logo</h2><p>Un logo efficace est simple, mémorable et intemporel. Nous explorerons les principes de design et les techniques de création avec les outils professionnels.</p><h2>2. Charte Graphique</h2><p>La charte graphique assure la cohérence visuelle sur tous les supports. Nous définirons couleurs, typographies, espacements et règles d'usage.</p><h2>3. Supports Marketing</h2><p>La déclinaison de l'identité sur différents supports (print, digital, signalétique) nécessite une adaptation réfléchie tout en gardant la cohérence.</p><h2>4. Psychologie des Couleurs</h2><p>Les couleurs influencent les émotions et perceptions. Nous étudierons l'impact psychologique des couleurs dans la communication visuelle.</p><h2>Conclusion</h2><p>Une identité visuelle forte différencie une marque et crée une connexion émotionnelle avec l'audience. L'investissement dans le design professionnel est rentable à long terme.</p>",
+      "date": "21 Août 2025 - 11:20",
+      "readTime": "10 min",
+      "category": "Design",
+      "author": "Edwin Tchamba",
+      "tags": ["Design", "Logo", "Branding", "Illustrator", "Photoshop"]
+    }
+  },
+  "blog": {
+    "searchPlaceholder": "Rechercher un article...",
+    "newsletter": {
+      "title": "Restez informé",
+      "description": "Recevez mes derniers articles et insights directement dans votre boîte mail.",
+      "emailPlaceholder": "Votre adresse email",
+      "subscribe": "S'abonner"
+    }
+  }
+}
