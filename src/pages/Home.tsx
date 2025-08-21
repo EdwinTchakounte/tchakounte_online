@@ -88,25 +88,25 @@ const Home = () => {
       id: 2,
       title: 'Flyers ',
       category: 'Branding',
-      image:'visuels/image7.jpeg'
+      image:'visuels/image2.jpg'
     },
     {
       id: 3,
       title: 'Flyers',
       category: 'Branding',
-      image: 'visuels/image3.jpeg'
+      image: 'visuels/image3.jpg'
     },
     {
       id: 4,
       title: 'Flyers',
       category: 'Branding',
-      image: 'visuels/image7.jpeg'
+      image: 'visuels/image4.jpg'
     },
     {
       id: 5,
       title: 'Flyers destiné à L\'IUT',
       category: 'Branding',
-      image: 'visuels/image6.jpeg'
+      image: 'visuels/image6.jpg'
     },
     {
       id: 6,
@@ -200,11 +200,11 @@ const Home = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 ">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-8">
+      <section className="relative min-h-screen flex items-center justify-center  px-8">
         {/* Slider d'images pour mobile */}
-        <div className="absolute inset-0 lg:hidden">
+        <div className="absolute inset-0 lg:hidden ">
           <ImageSlider 
             images={profileImages}
             autoSlide={true}
@@ -261,8 +261,7 @@ const Home = () => {
                   className="flex flex-wrap gap-3"
                 >
                   <div className="px-4 py-2 bg-blue-50 text-blue-600 text-xs font-medium tracking-wide uppercase rounded-full">
-                    {t('hero.bestProject')}
-                  </div>
+                    MPFE 2024                  </div>
                   <div className="px-4 py-2 bg-green-50 text-green-600 text-xs font-medium tracking-wide uppercase rounded-full">
                     {t('hero.pythonCertified')}
                   </div>
@@ -919,7 +918,7 @@ const PartnersSlider = () => {
       name: 'IUT FV Bandjoun',
       logo: 'logos/iut.png',
       description: 'Institut universitaire de technologie Fotso Victor de Bandjoun',
-      role: 'Collaboration',
+      role: 'Partenaire Académique',
       website: 'https://www.univ-dschang.org/iutfv/',
       color: 'indigo'
     },

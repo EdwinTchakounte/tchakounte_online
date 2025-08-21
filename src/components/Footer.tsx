@@ -22,10 +22,10 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-2xl font-light tracking-wider mb-4">
-              EDWIN<span className="text-blue-400">.</span>
+              TCHAKOUNTE<span className="text-blue-400">.</span>
             </h3>
             <p className="text-gray-400 font-light leading-relaxed">
-              {t('footer.brand')}
+              Software Engineer | Consultant IT |Designer
             </p>
           </motion.div>
 
