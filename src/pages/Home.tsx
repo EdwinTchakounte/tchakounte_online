@@ -88,25 +88,25 @@ const Home = () => {
       id: 2,
       title: 'Flyers ',
       category: 'Branding',
-      image:'visuels/image2.jpg'
+      image:'visuels/image7.jpeg'
     },
     {
       id: 3,
       title: 'Flyers',
       category: 'Branding',
-      image: 'visuels/image3.jpg'
+      image: 'visuels/image3.jpeg'
     },
     {
       id: 4,
       title: 'Flyers',
       category: 'Branding',
-      image: 'visuels/image4.jpg'
+      image: 'visuels/image7.jpeg'
     },
     {
       id: 5,
       title: 'Flyers destiné à L\'IUT',
       category: 'Branding',
-      image: 'visuels/image6.jpg'
+      image: 'visuels/image6.jpeg'
     },
     {
       id: 6,
