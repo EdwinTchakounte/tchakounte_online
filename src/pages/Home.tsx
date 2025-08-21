@@ -82,7 +82,7 @@ const Home = () => {
       id: 1,
       title: 'Flyers destiné à promouvoir la solution EnMKit',
       category: 'Branding',
-      image: 'visuels/image1.jpeg'
+      image: 'visuels/image1.jpg'
     },
     {
       id: 2,
