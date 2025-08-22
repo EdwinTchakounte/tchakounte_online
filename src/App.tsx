@@ -14,6 +14,7 @@ import Testimonials from './pages/Testimonials';
 import Skills from './pages/Skills';
 import Footer from './components/Footer';
 import BackgroundElements from './components/BackgroundElements';
+import WhatsAppButton from './pages/WhatsappButton';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/skills" element={<Skills />} />
         </Routes>
         <Footer />
+        <WhatsAppButton />
       </div>
     </Router>
   );
