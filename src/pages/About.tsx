@@ -7,7 +7,7 @@ const About = () => {
     {
       icon: Trophy,
       title: 'Meilleur Projet de Fin d\'Étude 2024',
-      description: 'Élu meilleur projet à l\'IUTR FV de Bandjoun',
+      description: 'Élu meilleur projet à l\'IUT FV de Bandjoun',
       year: '2024'
     },
     {
