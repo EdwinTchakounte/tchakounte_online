@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MessageCircle, Send, MapPin, Phone, Clock, CheckCircle } from 'lucide-react';
+import { supabase } from '../supabaseClient';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,14 +22,18 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Handle form submission here
     console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', company: '', subject: '', message: '', budget: '', timeline: '' });
-    }, 3000);
+    // Reset form
+    setFormData({ name: '', email: '', company: '', subject: '', message: '', budget: '', timeline: '' });
+
+     const { error } = await supabase.from('Kies_contact').insert([formData]);
+
+    if (error) {
+      alert("Erreur : " + error.message);
+    } 
   };
 
   const contactInfo = [
