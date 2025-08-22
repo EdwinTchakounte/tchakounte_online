@@ -109,7 +109,7 @@ const About = () => {
 
                 <p>
                   Élu <strong className="text-green-600">meilleur projet de fin d'étude 2024</strong> à 
-                  l'IUTR FV de Bandjoun et certifié développeur Python, je continue d'innover et de 
+                  l'IUT FV de Bandjoun et certifié développeur Python, je continue d'innover et de 
                   repousser les limites technologiques...
                 </p>
               </motion.div>
