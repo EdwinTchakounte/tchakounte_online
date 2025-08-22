@@ -29,7 +29,7 @@ const Contact = () => {
     // Reset form
     setFormData({ name: '', email: '', company: '', subject: '', message: '', budget: '', timeline: '' });
 
-     const { error } = await supabase.from('Kies_contact').insert([formData]);
+     const { error } = await supabase.from('tchakounte_contact').insert([formData]);
 
     if (error) {
       alert("Erreur : " + error.message);
