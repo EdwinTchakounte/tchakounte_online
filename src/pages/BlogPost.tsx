@@ -89,7 +89,727 @@ const blogPosts = {
     author: 'Edwin Tchamba',
     image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200',
     tags: ['TensorFlow', 'Keras', 'CNN', 'Computer Vision', 'Deep Learning']
+  },
+
+  '4': {
+  title: 'React : Guide Complet pour Développeurs Modernes (Édition Longue)',
+  content: `
+    <div class="article-content">
+
+      <p><em>Mise à jour : 25 août 2025 • Difficulté : Intermédiaire → Avancée • Durée de lecture : ~60 minutes</em></p>
+
+      <h2>Table des matières</h2>
+      <ol>
+        <li><a href="#intro">Introduction & objectifs</a></li>
+        <li><a href="#bases">Bases de React : composants, JSX, Virtual DOM</a></li>
+        <li><a href="#hooks">Hooks essentiels et patterns</a></li>
+        <li><a href="#etat-avance">Gestion d’état avancée (Context, Reducer, Redux Toolkit, React Query)</a></li>
+        <li><a href="#routing">Routing, Layouts et code splitting</a></li>
+        <li><a href="#perf">Performance : mémoïsation, Suspense, lazy, virtualisation</a></li>
+        <li><a href="#forms">Formulaires (React Hook Form, Zod) & accessibilité</a></li>
+        <li><a href="#tests">Tests (RTL/Jest), MSW, couverture</a></li>
+        <li><a href="#archi">Architecture & dossiers, conventions, DX</a></li>
+        <li><a href="#prod">Build, CI/CD, Docker, monitoring</a></li>
+        <li><a href="#rsc">React 18+, Concurrency & Server Components (aperçu)</a></li>
+        <li><a href="#recettes">Recettes pratiques (E-commerce, Dashboard, Chat temps réel)</a></li>
+        <li><a href="#checklist">Checklist finale & ressources</a></li>
+      </ol>
+
+      <hr/>
+
+      <h2 id="intro">1) Introduction & objectifs</h2>
+      <p>
+        Ce guide condensé mais complet vous accompagne de la base aux patterns avancés.
+        Vous verrez comment structurer une app, optimiser les rendus, gérer l’état (local, global, serveur),
+        tester et déployer en production. Tous les exemples sont en JavaScript/TypeScript prêt à copier.
+      </p>
+
+      <div class="callout" style="border-left:4px solid #3b82f6;padding:12px;background:#f8fafc">
+        <strong>À la fin</strong> : vous saurez architecturer une application React moderne,
+        choisir la bonne stratégie d’état, écrire des composants performants et testables,
+        et mettre en production avec un pipeline robuste.
+      </div>
+
+      <h2 id="bases">2) Bases de React : composants, JSX, Virtual DOM</h2>
+      <p>React est centré sur des composants déclaratifs. Le <em>Virtual DOM</em> permet des mises à jour minimales et performantes.</p>
+
+      <h3>Composant fonctionnel minimal</h3>
+      <pre><code class="language-jsx">
+import React from 'react';
+
+export function Hello({ name }) {
+  return &lt;h1&gt;Bonjour, {name}!&lt;/h1&gt;;
+}
+      </code></pre>
+
+      <h3>État local & événements</h3>
+      <pre><code class="language-jsx">
+import React, { useState } from 'react';
+
+export function Counter() {
+  const [count, setCount] = useState(0);
+  const increment = () =&gt; setCount(c =&gt; c + 1);
+  const decrement = () =&gt; setCount(c =&gt; Math.max(0, c - 1));
+
+  return (
+    &lt;div className="space-y-2"&gt;
+      &lt;h2&gt;Compteur : {count}&lt;/h2&gt;
+      &lt;div className="flex gap-2"&gt;
+        &lt;button onClick={decrement}&gt;-&lt;/button&gt;
+        &lt;button onClick={increment}&gt;+&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <h3>JSX : expressions et conditions</h3>
+      <pre><code class="language-jsx">
+function Welcome({ user }) {
+  return (
+    &lt;header&gt;
+      &lt;h1&gt;{user ? \`Salut, \${user.name}\` : 'Bienvenue'}&lt;/h1&gt;
+      {user &amp;&amp; &lt;p&gt;Rôle : {user.role}&lt;/p&gt;}
+    &lt;/header&gt;
+  );
+}
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="hooks">3) Hooks essentiels et patterns</h2>
+
+      <h3>useState + useEffect (fetch avec annulation)</h3>
+      <pre><code class="language-jsx">
+import React, { useEffect, useState } from 'react';
+
+export function Weather({ city }) {
+  const [data, setData] = useState(null);
+  const [err, setErr] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() =&gt; {
+    const ctrl = new AbortController();
+    async function run() {
+      try {
+        setLoading(true);
+        const res = await fetch(\`/api/weather?city=\${encodeURIComponent(city)}\`, { signal: ctrl.signal });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const json = await res.json();
+        setData(json);
+        setErr(null);
+      } catch (e) {
+        if (e.name !== 'AbortError') setErr(e.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    run();
+    return () =&gt; ctrl.abort();
+  }, [city]);
+
+  if (loading) return &lt;p&gt;Chargement...&lt;/p&gt;;
+  if (err) return &lt;p className="text-red-600"&gt;Erreur : {String(err)}&lt;/p&gt;;
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;{data.city}&lt;/h3&gt;
+      &lt;div&gt;Temp: {data.temp}°C&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <h3>useMemo & useCallback : mémoïsation ciblée</h3>
+      <pre><code class="language-jsx">
+import React, { useMemo, useCallback } from 'react';
+
+export function SearchableList({ items, onPick }) {
+  const [q, setQ] = React.useState('');
+  const filtered = useMemo(
+    () =&gt; items.filter(i =&gt; i.label.toLowerCase().includes(q.toLowerCase())),
+    [items, q]
+  );
+  const handlePick = useCallback((id) =&gt; onPick(id), [onPick]);
+
+  return (
+    &lt;div&gt;
+      &lt;input value={q} onChange={e =&gt; setQ(e.target.value)} placeholder="Rechercher..." /&gt;
+      &lt;ul&gt;
+        {filtered.map(i =&gt; (
+          &lt;li key={i.id}&gt;&lt;button onClick={() =&gt; handlePick(i.id)}&gt;{i.label}&lt;/button&gt;&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <h3>useRef : référence mutable + mesure DOM</h3>
+      <pre><code class="language-jsx">
+import React, { useRef, useEffect, useState } from 'react';
+
+export function MeasureBox() {
+  const ref = useRef(null);
+  const [rect, setRect] = useState(null);
+
+  useEffect(() =&gt; {
+    if (!ref.current) return;
+    const r = ref.current.getBoundingClientRect();
+    setRect({ w: Math.round(r.width), h: Math.round(r.height) });
+  }, []);
+
+  return (
+    &lt;div&gt;
+      &lt;div ref={ref} style={{ width: 300, height: 120, background: '#eef' }} /&gt;
+      {rect &amp;&amp; &lt;p&gt;Taille: {rect.w}x{rect.h}&lt;/p&gt;}
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <h3>Hook personnalisé (fetch générique)</h3>
+      <pre><code class="language-jsx">
+import { useEffect, useState } from 'react';
+
+export function useApi(url, deps = []) {
+  const [data, setData] = useState(null);
+  const [err, setErr] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() =&gt; {
+    let cancel = false;
+    async function run() {
+      try {
+        setLoading(true);
+        const res = await fetch(url);
+        const json = await res.json();
+        if (!cancel) setData(json);
+      } catch (e) {
+        if (!cancel) setErr(e);
+      } finally {
+        if (!cancel) setLoading(false);
+      }
+    }
+    run();
+    return () =&gt; { cancel = true; };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
+
+  return { data, err, loading };
+}
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="etat-avance">4) Gestion d’état avancée</h2>
+
+      <h3>Context + useReducer (store léger)</h3>
+      <pre><code class="language-jsx">
+import React, { createContext, useReducer, useContext } from 'react';
+
+const StateCtx = createContext(null);
+const DispatchCtx = createContext(null);
+
+const initial = { user: null, cart: [] };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'login': return { ...state, user: action.payload };
+    case 'logout': return { ...state, user: null, cart: [] };
+    case 'add': return { ...state, cart: [...state.cart, action.payload] };
+    default: return state;
   }
+}
+
+export function AppProvider({ children }) {
+  const [state, dispatch] = useReducer(reducer, initial);
+  return (
+    &lt;StateCtx.Provider value={state}&gt;
+      &lt;DispatchCtx.Provider value={dispatch}&gt;{children}&lt;/DispatchCtx.Provider&gt;
+    &lt;/StateCtx.Provider&gt;
+  );
+}
+
+export const useAppState = () =&gt; useContext(StateCtx);
+export const useAppDispatch = () =&gt; useContext(DispatchCtx);
+      </code></pre>
+
+      <h3>Redux Toolkit (slice moderne)</h3>
+      <pre><code class="language-jsx">
+import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+
+const todos = createSlice({
+  name: 'todos',
+  initialState: { items: [] },
+  reducers: {
+    add: (state, action) =&gt; { state.items.push({ id: Date.now(), text: action.payload, done: false }); },
+    toggle: (state, action) =&gt; {
+      const t = state.items.find(x =&gt; x.id === action.payload);
+      if (t) t.done = !t.done;
+    }
+  }
+});
+
+export const { add, toggle } = todos.actions;
+
+const store = configureStore({ reducer: { todos: todos.reducer } });
+
+export function TodoApp() {
+  const items = useSelector(s =&gt; s.todos.items);
+  const dispatch = useDispatch();
+  const [text, setText] = React.useState('');
+
+  return (
+    &lt;div&gt;
+      &lt;input value={text} onChange={e =&gt; setText(e.target.value)} placeholder="Nouvelle tâche..." /&gt;
+      &lt;button onClick={() =&gt; { if (text) dispatch(add(text)); setText(''); }}&gt;Ajouter&lt;/button&gt;
+      &lt;ul&gt;{items.map(t =&gt; (
+        &lt;li key={t.id}&gt;&lt;label&gt;&lt;input type="checkbox" checked={t.done} onChange={() =&gt; dispatch(toggle(t.id))} /&gt; {t.text}&lt;/label&gt;&lt;/li&gt;
+      ))}&lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+export function AppRoot() {
+  return &lt;Provider store={store}&gt;&lt;TodoApp /&gt;&lt;/Provider&gt;;
+}
+      </code></pre>
+
+      <h3>Gestion des données serveur (React Query)</h3>
+      <pre><code class="language-jsx">
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
+
+const qc = new QueryClient();
+
+function Products() {
+  const { data, error, isLoading, refetch } = useQuery({
+    queryKey: ['products'],
+    queryFn: async () =&gt; (await fetch('/api/products')).json(),
+    staleTime: 60_000
+  });
+
+  if (isLoading) return &lt;p&gt;Chargement...&lt;/p&gt;;
+  if (error) return &lt;p&gt;Erreur&lt;/p&gt;;
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; refetch()}&gt;Rafraîchir&lt;/button&gt;
+      &lt;ul&gt;{data.map(p =&gt; &lt;li key={p.id}&gt;{p.name} - {p.price}€&lt;/li&gt;)}&lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+export function DataApp() {
+  return &lt;QueryClientProvider client={qc}&gt;&lt;Products /&gt;&lt;/QueryClientProvider&gt;;
+}
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="routing">5) Routing, Layouts et code splitting</h2>
+      <pre><code class="language-jsx">
+import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+
+const Home = () =&gt; &lt;h1&gt;Accueil&lt;/h1&gt;;
+const Product = lazy(() =&gt; import('./Product'));
+
+function RootLayout() {
+  return (
+    &lt;div&gt;
+      &lt;nav className="flex gap-3"&gt;
+        &lt;Link to="/"&gt;Home&lt;/Link&gt;
+        &lt;Link to="/product/42"&gt;Produit&lt;/Link&gt;
+      &lt;/nav&gt;
+      &lt;main&gt;&lt;Outlet /&gt;&lt;/main&gt;
+    &lt;/div&gt;
+  );
+}
+
+export function RouterApp() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Routes&gt;
+        &lt;Route element={&lt;RootLayout /&gt;}&gt;
+          &lt;Route index element={&lt;Home /&gt;} /&gt;
+          &lt;Route path="product/:id" element={
+            &lt;Suspense fallback={&lt;p&gt;Chargement du produit...&lt;/p&gt;}&gt;
+              &lt;Product /&gt;
+            &lt;/Suspense&gt;
+          } /&gt;
+        &lt;/Route&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="perf">6) Performance : mémoïsation, Suspense, virtualisation</h2>
+
+      <h3>React.memo + comparaison personnalisée</h3>
+      <pre><code class="language-jsx">
+import React from 'react';
+
+const Item = React.memo(function Item({ value, onClick }) {
+  return &lt;button onClick={() =&gt; onClick(value.id)}&gt;{value.label}&lt;/button&gt;;
+}, (prev, next) =&gt; prev.value.id === next.value.id &amp;&amp; prev.onClick === next.onClick);
+
+export default Item;
+      </code></pre>
+
+      <h3>Virtualisation (liste large)</h3>
+      <pre><code class="language-jsx">
+import React, { useRef, useState, useMemo, useEffect } from 'react';
+
+export function VirtualList({ items, row = 48, height = 480 }) {
+  const ref = useRef(null);
+  const [scrollTop, setScrollTop] = useState(0);
+  const total = items.length * row;
+  const start = Math.floor(scrollTop / row);
+  const visibleCount = Math.ceil(height / row) + 2;
+  const slice = useMemo(() =&gt; items.slice(start, start + visibleCount), [items, start, visibleCount]);
+
+  useEffect(() =&gt; {
+    const el = ref.current;
+    if (!el) return;
+    const onScroll = (e) =&gt; setScrollTop(e.target.scrollTop);
+    el.addEventListener('scroll', onScroll);
+    return () =&gt; el.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    &lt;div ref={ref} style={{ height, overflow: 'auto' }}&gt;
+      &lt;div style={{ height: total, position: 'relative' }}&gt;
+        {slice.map((it, i) =&gt; (
+          &lt;div key={start + i} style={{ position: 'absolute', top: (start + i) * row, height: row, left: 0, right: 0 }}&gt;
+            {it.label}
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="forms">7) Formulaires (React Hook Form + Zod) & a11y</h2>
+      <pre><code class="language-jsx">
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const Schema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+  remember: z.boolean().optional()
+});
+
+export function LoginForm() {
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({
+    resolver: zodResolver(Schema),
+    defaultValues: { email: '', password: '', remember: false }
+  });
+
+  const onSubmit = (values) =&gt; new Promise(r =&gt; setTimeout(() =&gt; r(console.log(values)), 800));
+
+  return (
+    &lt;form onSubmit={handleSubmit(onSubmit)} aria-label="Formulaire de connexion"&gt;
+      &lt;label&gt;Email&lt;/label&gt;
+      &lt;input type="email" {...register('email')} aria-invalid={!!errors.email} /&gt;
+      {errors.email &amp;&amp; &lt;span role="alert"&gt;{errors.email.message}&lt;/span&gt;}
+
+      &lt;label&gt;Mot de passe&lt;/label&gt;
+      &lt;input type="password" {...register('password')} aria-invalid={!!errors.password} /&gt;
+      {errors.password &amp;&amp; &lt;span role="alert"&gt;{errors.password.message}&lt;/span&gt;}
+
+      &lt;label&gt;&lt;input type="checkbox" {...register('remember')} /&gt; Se souvenir de moi&lt;/label&gt;
+
+      &lt;button disabled={isSubmitting}&gt;Se connecter&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="tests">8) Tests (RTL, Jest), MSW</h2>
+      <pre><code class="language-jsx">
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Counter } from './Counter';
+
+test('incrémente et décrémente', async () =&gt; {
+  const u = userEvent.setup();
+  render(&lt;Counter /&gt;);
+  await u.click(screen.getByText('+'));
+  await u.click(screen.getByText('+'));
+  expect(screen.getByText(/Compteur : 2/)).toBeInTheDocument();
+  await u.click(screen.getByText('-'));
+  expect(screen.getByText(/Compteur : 1/)).toBeInTheDocument();
+});
+      </code></pre>
+
+      <h3>MSW (mocker une API)</h3>
+      <pre><code class="language-jsx">
+// setupTests.ts
+import { setupServer } from 'msw/node';
+import { rest } from 'msw';
+
+export const server = setupServer(
+  rest.get('/api/products', (_req, res, ctx) =&gt; res(
+    ctx.json([{ id: 1, name: 'Livre', price: 12 }])
+  ))
+);
+
+beforeAll(() =&gt; server.listen());
+afterEach(() =&gt; server.resetHandlers());
+afterAll(() =&gt; server.close());
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="archi">9) Architecture & dossiers</h2>
+      <pre><code class="language-txt">
+src/
+├─ app/                # Entrée, providers globaux, routes
+├─ components/         # UI réutilisable (boutons, cartes, modals…)
+├─ features/           # Domaines (cart, auth, products…)
+│  └─ &lt;feature&gt;/
+│     ├─ components/
+│     ├─ hooks/
+│     ├─ api/
+│     └─ store/
+├─ hooks/              # Hooks transverses
+├─ lib/                # utilitaires (date, i18n, fetcher…)
+├─ pages/              # (si React Router) pages/route units
+├─ styles/             # CSS/Tailwind/tokens
+└─ tests/              # setup tests + mocks
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="prod">10) Build, CI/CD, Docker, monitoring</h2>
+
+      <h3>Vite config</h3>
+      <pre><code class="language-js">
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  build: {
+    target: 'es2018',
+    sourcemap: true,
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom']
+        }
+      }
+    }
+  }
+});
+      </code></pre>
+
+      <h3>Dockerfile multi-stage</h3>
+      <pre><code class="language-docker">
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx","-g","daemon off;"]
+      </code></pre>
+
+      <h3>Error Boundary + monitoring</h3>
+      <pre><code class="language-jsx">
+import React from 'react';
+
+class ErrorBoundary extends React.Component {
+  state = { hasError: false };
+  static getDerivedStateFromError() { return { hasError: true }; }
+  componentDidCatch(error, info) {
+    // Envoyer à Sentry/LogRocket selon NODE_ENV
+    console.error('Captured', error, info);
+  }
+  render() {
+    if (this.state.hasError) return &lt;p&gt;Une erreur est survenue.&lt;/p&gt;;
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="rsc">11) React 18+, Concurrency & Server Components (aperçu)</h2>
+      <pre><code class="language-jsx">
+import { startTransition, useDeferredValue, useState } from 'react';
+
+export function Search() {
+  const [q, setQ] = useState('');
+  const deferred = useDeferredValue(q);
+  const [results, setResults] = useState([]);
+
+  React.useEffect(() =&gt; {
+    startTransition(() =&gt; {
+      fetch('/api/search?q=' + encodeURIComponent(deferred))
+        .then(r =&gt; r.json()).then(setResults);
+    });
+  }, [deferred]);
+
+  return (
+    &lt;div&gt;
+      &lt;input value={q} onChange={e =&gt; setQ(e.target.value)} placeholder="Tapez..." /&gt;
+      &lt;ul&gt;{results.map(r =&gt; &lt;li key={r.id}&gt;{r.title}&lt;/li&gt;)}&lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="recettes">12) Recettes pratiques</h2>
+
+      <h3>E-commerce (catalogue + panier local)</h3>
+      <pre><code class="language-jsx">
+import React from 'react';
+
+function useCart() {
+  const [cart, setCart] = React.useState([]);
+  const add = (p) =&gt; setCart(c =&gt; {
+    const e = c.find(i =&gt; i.id === p.id);
+    if (e) return c.map(i =&gt; i.id === p.id ? { ...i, qty: i.qty + 1 } : i);
+    return [...c, { ...p, qty: 1 }];
+  });
+  const total = cart.reduce((s, i) =&gt; s + i.price * i.qty, 0);
+  return { cart, add, total };
+}
+
+export function Catalog() {
+  const [products, setProducts] = React.useState([]);
+  const { cart, add, total } = useCart();
+
+  React.useEffect(() =&gt; { fetch('/api/products').then(r =&gt; r.json()).then(setProducts); }, []);
+
+  return (
+    &lt;div className="grid grid-cols-3 gap-6"&gt;
+      &lt;section className="col-span-2"&gt;
+        &lt;h2&gt;Produits&lt;/h2&gt;
+        &lt;div className="grid grid-cols-2 gap-4"&gt;
+          {products.map(p =&gt; (
+            &lt;article key={p.id} className="border p-3"&gt;
+              &lt;h3&gt;{p.name}&lt;/h3&gt;&lt;p&gt;{p.price}€&lt;/p&gt;
+              &lt;button onClick={() =&gt; add(p)}&gt;Ajouter&lt;/button&gt;
+            &lt;/article&gt;
+          ))}
+        &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;aside&gt;
+        &lt;h2&gt;Panier&lt;/h2&gt;
+        &lt;ul&gt;{cart.map(i =&gt; &lt;li key={i.id}&gt;{i.name} x {i.qty}&lt;/li&gt;)}&lt;/ul&gt;
+        &lt;div&gt;Total : {total.toFixed(2)}€&lt;/div&gt;
+      &lt;/aside&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <h3>Dashboard (charts pseudo-données)</h3>
+      <pre><code class="language-jsx">
+import React from 'react';
+
+export function Dashboard() {
+  const [metrics, setMetrics] = React.useState(null);
+  React.useEffect(() =&gt; {
+    (async () =&gt; setMetrics(await (await fetch('/api/metrics')).json()))();
+  }, []);
+  if (!metrics) return &lt;p&gt;Chargement...&lt;/p&gt;;
+  return (
+    &lt;div className="grid grid-cols-3 gap-4"&gt;
+      &lt;div className="p-4 border"&gt;Visiteurs: {metrics.visitors}&lt;/div&gt;
+      &lt;div className="p-4 border"&gt;Pages vues: {metrics.pageViews}&lt;/div&gt;
+      &lt;div className="p-4 border"&gt;Conversion: {metrics.conversion}%&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <h3>Chat temps réel (WebSocket)</h3>
+      <pre><code class="language-jsx">
+import React from 'react';
+
+export function Chat() {
+  const [ws, setWs] = React.useState(null);
+  const [messages, setMessages] = React.useState([]);
+  const [text, setText] = React.useState('');
+
+  React.useEffect(() =&gt; {
+    const sock = new WebSocket('wss://example.com/chat');
+    sock.onopen = () =&gt; setWs(sock);
+    sock.onmessage = (e) =&gt; setMessages(m =&gt; [...m, JSON.parse(e.data)]);
+    return () =&gt; sock.close();
+  }, []);
+
+  const send = (e) =&gt; {
+    e.preventDefault();
+    if (ws &amp;&amp; text.trim()) {
+      ws.send(JSON.stringify({ text }));
+      setText('');
+    }
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;ul&gt;{messages.map((m,i) =&gt; &lt;li key={i}&gt;{m.text}&lt;/li&gt;)}&lt;/ul&gt;
+      &lt;form onSubmit={send}&gt;
+        &lt;input value={text} onChange={e =&gt; setText(e.target.value)} placeholder="Tapez votre message..." /&gt;
+        &lt;button&gt;Envoyer&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <hr/>
+
+      <h2 id="checklist">13) Checklist finale & bonnes pratiques</h2>
+      <ul>
+        <li>Composants purs, petits et nommés selon leur rôle</li>
+        <li>État local vs global : choisissez la solution la plus simple qui marche</li>
+        <li>Data-fetching : cachez et invalidez (React Query)</li>
+        <li>Performance : mémoïser <em>après</em> profilage, pas avant</li>
+        <li>a11y : labels, rôles ARIA, focus management</li>
+        <li>Tests : unités (composants), intégration (workflows), mocks réseau (MSW)</li>
+        <li>Build : découpage des bundles, lazy loading, sourcemaps prod privées</li>
+        <li>Sécurité : .env, CORS, CSP, limites API, logs sans secrets</li>
+        <li>Monitoring : erreurs, lenteurs, métriques clés</li>
+      </ul>
+
+      <p><strong>Ressources</strong> : docs React, React Router, Redux Toolkit, TanStack Query, React Hook Form, Testing Library.</p>
+
+    </div>
+  `,
+  date: '25 Août 2025 - 14:30',
+  readTime: '60 min',
+  category: 'Frontend',
+  author: 'Edwin Tchamba',
+  image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  tags: ['React', 'JavaScript', 'Hooks', 'Performance', 'Architecture', 'Testing', 'React Query', 'Redux Toolkit', 'WebSocket', 'Vite']
+}
+
 };
 
 const BlogPost = () => {
