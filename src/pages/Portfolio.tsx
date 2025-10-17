@@ -10,7 +10,7 @@ const Portfolio = () => {
     category: 'IoT & Développement Full-Stack',
     description: 'Système intelligent de contrôle d’accès à un portique automobile intégrant React, Django et Arduino.',
     longDescription: 'Conception et développement d’un système IoT complet permettant de gérer l’accès à un portique automobile. Le projet inclut une interface web en React pour le suivi, une API backend en Django, et un module Arduino pour le contrôle physique du portique.',
-    image: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://drive.google.com/file/d/1-A6RzsNJjuzHtUjYgkFrFLYSe6vT6Q4x/view?usp=sharing',
     technologies: ['React', 'Django', 'Arduino', 'IoT'],
     features: [
       'Authentification et contrôle d’accès sécurisé',
@@ -310,14 +310,7 @@ const Portfolio = () => {
                         <ExternalLink className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                       </motion.a>
                       
-                      <motion.a
-                        href={project.github}
-                        className="group/btn inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 font-light tracking-wide uppercase text-sm hover:border-gray-400 transition-all duration-300"
-                        whileHover={{ x: 5 }}
-                      >
-                        <Github className="mr-2 h-4 w-4" />
-                        Code source
-                      </motion.a>
+
                     </div>
                   </div>
                 </div>
