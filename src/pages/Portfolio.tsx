@@ -4,6 +4,84 @@ import { ArrowUpRight, Github, ExternalLink, Calendar, Users } from 'lucide-reac
 
 const Portfolio = () => {
   const projects = [
+      {
+    id: 3,
+    title: 'Système de Gestion des Prédications',
+    category: 'Application Mobile',
+    description: 'Application mobile pour la gestion et l’archivage des prédications d’église.',
+    longDescription: 'Développement d’une application Flutter connectée à Supabase pour gérer, consulter et archiver les prédications. Intégration d’authentification, gestion des utilisateurs et consultation hors-ligne.',
+    image: 'https://images.pexels.com/photos/164216/pexels-photo-164216.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['Flutter', 'Supabase'],
+    features: [
+      'Ajout et archivage des prédications',
+      'Recherche et consultation rapide',
+      'Gestion des comptes utilisateurs',
+      'Mode hors-ligne disponible'
+    ],
+    metrics: {
+      duration: '6 mois',
+      team: '1 développeur',
+      performance: 'Facilité d’accès aux prédications',
+      users: '300+ membres'
+    },
+    year: '2024',
+    client: 'Communauté religieuse locale',
+    status: 'En production',
+    github: '#',
+    live: '#'
+  },
+    {
+    id: 4,
+    title: 'Site Vitrine 2MeTech',
+    category: 'Développement Web Front-End',
+    description: 'Site vitrine professionnel pour l’entreprise 2MeTech.',
+    longDescription: 'Conception d’un site vitrine moderne et responsive pour présenter les services et solutions de l’entreprise 2MeTech. Optimisation SEO et design épuré.',
+    image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['React', 'TailwindCSS'],
+    features: [
+      'Design moderne et responsive',
+      'Optimisation SEO',
+      'Présentation claire des services',
+      'Formulaire de contact intégré'
+    ],
+    metrics: {
+      duration: '1 mois',
+      team: '1 développeur',
+      performance: 'Visibilité accrue en ligne',
+      users: '500+ visiteurs/mois'
+    },
+    year: '2025',
+    client: '2MeTech',
+    status: 'En ligne',
+    github: '#',
+    live: 'https://www.2metechsarl.org/'
+  },
+  {
+    id: 5,
+    title: 'Site Vitrine KSIES Scholarship',
+    category: 'Développement Web Front-End',
+    description: 'Site vitrine pour la plateforme KSIES Scholarship.',
+    longDescription: 'Développement d’un site vitrine dynamique en React afin de présenter les opportunités de bourses et les actualités liées au programme KSIES Scholarship.',
+    image: 'https://images.pexels.com/photos/256502/pexels-photo-256502.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['React', 'TailwindCSS'],
+    features: [
+      'Interface moderne et intuitive',
+      'Optimisation SEO pour la visibilité',
+      'Mise en avant des opportunités de bourses',
+      'Système de mise à jour simplifié'
+    ],
+    metrics: {
+      duration: '1 mois',
+      team: '1 développeur',
+      performance: 'Augmentation des candidatures en ligne',
+      users: '1K+ visiteurs/mois'
+    },
+    year: '2025',
+    client: 'KSIES Scholarship',
+    status: 'En ligne',
+    github: '#',
+    live: 'https://ksies-scholarships.net'
+  },
   {
     id: 1,
     title: 'Système IoT de Contrôle d’Accès Automobile',
@@ -56,84 +134,8 @@ const Portfolio = () => {
     github: '#',
     live: '#'
   },
-  {
-    id: 3,
-    title: 'Système de Gestion des Prédications',
-    category: 'Application Mobile',
-    description: 'Application mobile pour la gestion et l’archivage des prédications d’église.',
-    longDescription: 'Développement d’une application Flutter connectée à Supabase pour gérer, consulter et archiver les prédications. Intégration d’authentification, gestion des utilisateurs et consultation hors-ligne.',
-    image: 'https://images.pexels.com/photos/164216/pexels-photo-164216.jpeg?auto=compress&cs=tinysrgb&w=800',
-    technologies: ['Flutter', 'Supabase'],
-    features: [
-      'Ajout et archivage des prédications',
-      'Recherche et consultation rapide',
-      'Gestion des comptes utilisateurs',
-      'Mode hors-ligne disponible'
-    ],
-    metrics: {
-      duration: '6 mois',
-      team: '1 développeur',
-      performance: 'Facilité d’accès aux prédications',
-      users: '300+ membres'
-    },
-    year: '2024',
-    client: 'Communauté religieuse locale',
-    status: 'En production',
-    github: '#',
-    live: '#'
-  },
-  {
-    id: 4,
-    title: 'Site Vitrine 2MeTech',
-    category: 'Développement Web Front-End',
-    description: 'Site vitrine professionnel pour l’entreprise 2MeTech.',
-    longDescription: 'Conception d’un site vitrine moderne et responsive pour présenter les services et solutions de l’entreprise 2MeTech. Optimisation SEO et design épuré.',
-    image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
-    technologies: ['React', 'TailwindCSS'],
-    features: [
-      'Design moderne et responsive',
-      'Optimisation SEO',
-      'Présentation claire des services',
-      'Formulaire de contact intégré'
-    ],
-    metrics: {
-      duration: '1 mois',
-      team: '1 développeur',
-      performance: 'Visibilité accrue en ligne',
-      users: '500+ visiteurs/mois'
-    },
-    year: '2025',
-    client: '2MeTech',
-    status: 'En ligne',
-    github: '#',
-    live: 'https://www.2metechsarl.org/'
-  },
-  {
-    id: 5,
-    title: 'Site Vitrine KSIES Scholarship',
-    category: 'Développement Web Front-End',
-    description: 'Site vitrine pour la plateforme KSIES Scholarship.',
-    longDescription: 'Développement d’un site vitrine dynamique en React afin de présenter les opportunités de bourses et les actualités liées au programme KSIES Scholarship.',
-    image: 'https://images.pexels.com/photos/256502/pexels-photo-256502.jpeg?auto=compress&cs=tinysrgb&w=800',
-    technologies: ['React', 'TailwindCSS'],
-    features: [
-      'Interface moderne et intuitive',
-      'Optimisation SEO pour la visibilité',
-      'Mise en avant des opportunités de bourses',
-      'Système de mise à jour simplifié'
-    ],
-    metrics: {
-      duration: '1 mois',
-      team: '1 développeur',
-      performance: 'Augmentation des candidatures en ligne',
-      users: '1K+ visiteurs/mois'
-    },
-    year: '2025',
-    client: 'KSIES Scholarship',
-    status: 'En ligne',
-    github: '#',
-    live: 'https://ksies-scholarships.net'
-  }
+
+  
 ];
 
 
