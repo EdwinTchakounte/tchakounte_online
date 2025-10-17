@@ -28,7 +28,7 @@ const Portfolio = () => {
     client: 'Communauté religieuse locale',
     status: 'En production',
     github: '#',
-    live: '#'
+    live: 'https://www.meditation-matinale-mema.online/'
   },
     {
     id: 4,
