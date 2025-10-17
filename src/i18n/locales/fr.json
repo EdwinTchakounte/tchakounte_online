@@ -82,23 +82,7 @@
     "subtitle": "Témoignages de satisfaction et de confiance",
     "seeAll": "Voir tous les témoignages"
   },
-  "blog": {
-    "title": "Derniers articles",
-    "subtitle": "Insights techniques et tendances du développement",
-    "seeAll": "Voir tous les articles",
-    "readTime": "min",
-    "categories": {
-      "architecture": "Architecture",
-      "backend": "Backend",
-      "aiml": "IA/ML",
-      "frontend": "Frontend",
-      "devops": "DevOps",
-      "mobile": "Mobile",
-      "dataScience": "Data Science",
-      "security": "Sécurité",
-      "design": "Design"
-    }
-  },
+
   "partners": {
     "title": "Nos Entreprises",
     "subtitle": "Collaboratives & Partenaires",
@@ -278,6 +262,21 @@
     }
   },
   "blog": {
+        "title": "Derniers articles",
+    "subtitle": "Insights techniques et tendances du développement",
+    "seeAll": "Voir tous les articles",
+    "readTime": "min",
+    "categories": {
+      "architecture": "Architecture",
+      "backend": "Backend",
+      "aiml": "IA/ML",
+      "frontend": "Frontend",
+      "devops": "DevOps",
+      "mobile": "Mobile",
+      "dataScience": "Data Science",
+      "security": "Sécurité",
+      "design": "Design"
+    },
     "searchPlaceholder": "Rechercher un article...",
     "newsletter": {
       "title": "Restez informé",

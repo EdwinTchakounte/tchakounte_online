@@ -229,6 +229,7 @@ const Blog = () => {
                   }`}
                 >
                   {category}
+                  
                 </button>
               ))}
             </motion.div>
